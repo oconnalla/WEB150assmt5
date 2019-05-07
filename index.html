@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <body>
+        <script>
+            //array to store grades
+        var grade = [];
+        //counter for amount of test scores
+        var count = 0;
+        //sum of total scores
+        var total =  0;
+
+
+        //function to collect user's test scores
+        var gradeFunction = function(){
+            do{
+                var gradeInput = parseInt(prompt("Enter test score" + '\n or enter 999 to end entries'));
+                grade.push(gradeInput);
+            } while(gradeInput != 999 && gradeInput > 0);
+        //collects total and count
+            if(gradeInput === 999){
+                    grade.pop();
+                for( var i = 0; i < grade.length; i++){
+                    total = total + parseInt(grade[i]);
+                    count ++;
+                }
+            }
+        }
+
+            gradeFunction();
+            var avg = total/count;
+            alert('Average score is ' + avg);
+        </script>
+    </body>
+</html>
